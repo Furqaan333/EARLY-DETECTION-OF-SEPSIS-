@@ -1,0 +1,109 @@
+{% extends 'base.html' %}
+{% block title %}Welcome | Sepsis Risk Predictor{% endblock %}
+
+{% block content %}
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Space+Grotesk:wght@400;600&display=swap');
+
+  body {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    overflow-x: hidden;
+    color: #fff;
+  }
+
+  .hero {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 100vh;
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.65), rgba(10, 10, 20, 0.7)),
+                url("{{ url_for('static', filename='images/sepsis-medical-bg.jpg') }}")
+                no-repeat center center/cover;
+    padding: 0 20px;
+  }
+
+  .hero-content {
+    max-width: 750px;
+  }
+
+  .hero small {
+    display: block;
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #aeeeee;
+    margin-bottom: 15px;
+  }
+
+  .hero h1 {
+    font-size: 4rem;
+    font-weight: 700;
+    margin: 0;
+    line-height: 1.1;
+  }
+
+  .hero p {
+    font-size: 1.1rem;
+    font-weight: 400;
+    color: #dddddd;
+    margin-top: 22px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.6;
+  }
+
+  .cta-btn {
+    display: inline-block;
+    margin-top: 32px;
+    padding: 13px 32px;
+    border: 2px solid #00e6e6;
+    color: #00e6e6;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 1.05rem;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+
+  .cta-btn:hover {
+    background-color: #00e6e6;
+    color: #000;
+  }
+
+  @media (max-width: 768px) {
+    .hero h1 {
+      font-size: 2.6rem;
+    }
+
+    .hero p {
+      font-size: 1rem;
+    }
+
+    .cta-btn {
+      width: 100%;
+      padding: 14px;
+    }
+  }
+</style>
+
+<section class="hero">
+  <div class="hero-content">
+    <small>AI-Powered Clinical Decision Support</small>
+
+    <h1>Early Detection of Sepsis</h1>
+
+    <p>
+      A disease-specific, non-ICU sepsis prediction system that uses
+      machine learning to identify early sepsis risk caused by
+      Pneumonia, Urinary Tract Infection (UTI),
+      Abdominal Infections, and Skin & Soft Tissue Infections (SSTI).
+    </p>
+
+    <a href="{{ url_for('login') }}" class="cta-btn">Get Started</a>
+  </div>
+</section>
+{% endblock %}

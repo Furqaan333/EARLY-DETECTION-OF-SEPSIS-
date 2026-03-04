@@ -1,0 +1,394 @@
+Disease,Actual_Sepsis,Predicted_Sepsis,Sepsis_Probability,Sepsis_Risk_Level
+Pneumonia,Medium,Medium,0.2249929948564023,Low Risk
+Pneumonia,High,High,0.6888617800437347,High Risk
+Pneumonia,Medium,Medium,0.1694824882113906,Low Risk
+Pneumonia,Medium,Medium,0.0615509768757925,Low Risk
+Pneumonia,Medium,Medium,0.1145410547327863,Low Risk
+Pneumonia,Low,Low,0.0160742792671005,Low Risk
+Pneumonia,Medium,Medium,0.1519409452414309,Low Risk
+Pneumonia,High,Medium,0.4211845435748576,Moderate Risk
+Pneumonia,Low,Low,0.0260892122282684,Low Risk
+Pneumonia,Medium,Low,0.0936192582762371,Low Risk
+Pneumonia,Low,Low,0.0330744508763861,Low Risk
+Pneumonia,High,Medium,0.2657212622570121,Low Risk
+Pneumonia,Medium,Medium,0.3503095946588051,Moderate Risk
+Pneumonia,Medium,Medium,0.0387857665062548,Low Risk
+Pneumonia,Medium,Medium,0.327563373530834,Moderate Risk
+Pneumonia,Low,Low,0.0089395975203163,Low Risk
+Pneumonia,Medium,Medium,0.4180232005231438,Moderate Risk
+Pneumonia,Medium,Medium,0.0893152901862444,Low Risk
+Pneumonia,Medium,Medium,0.3134169389819219,Moderate Risk
+Pneumonia,Medium,Low,0.059371096702862,Low Risk
+Pneumonia,Medium,Medium,0.1486396267101704,Low Risk
+Pneumonia,High,High,0.8071709929602846,High Risk
+Pneumonia,High,High,0.5604151294118022,Moderate Risk
+Pneumonia,High,High,0.7314961868795248,High Risk
+Pneumonia,Medium,Medium,0.0327035161920155,Low Risk
+Pneumonia,Medium,Medium,0.1652126308931416,Low Risk
+Pneumonia,Low,Low,0.0074188143848355,Low Risk
+Pneumonia,Low,Low,0.0082228334156263,Low Risk
+Pneumonia,Medium,Medium,0.372948567975836,Moderate Risk
+Pneumonia,High,High,0.8039510799289861,High Risk
+Pneumonia,Low,Low,0.0036726341622448,Low Risk
+Pneumonia,High,High,0.7987693018399452,High Risk
+Pneumonia,Medium,Low,0.0434099163841283,Low Risk
+Pneumonia,Medium,Medium,0.3606230254216838,Moderate Risk
+Pneumonia,Low,Low,0.0068278391732466,Low Risk
+Pneumonia,Low,Low,0.0138101431568186,Low Risk
+Pneumonia,Medium,Medium,0.0587505949572542,Low Risk
+Pneumonia,Low,Low,0.0064115004122441,Low Risk
+Pneumonia,Medium,Medium,0.3316445010419214,Moderate Risk
+Pneumonia,Low,Low,0.0040244971226439,Low Risk
+Pneumonia,High,Medium,0.3491701823861913,Moderate Risk
+Pneumonia,Medium,Medium,0.3610805967972499,Moderate Risk
+Pneumonia,Medium,Medium,0.3980386866866751,Moderate Risk
+Pneumonia,Low,Low,0.0116150193533931,Low Risk
+Pneumonia,Medium,Medium,0.0649183812696896,Low Risk
+Pneumonia,Medium,Medium,0.3135733227973719,Moderate Risk
+Pneumonia,Medium,Medium,0.2366720128264177,Low Risk
+Pneumonia,Medium,Medium,0.1107438533090103,Low Risk
+Pneumonia,Medium,Medium,0.3660012771609801,Moderate Risk
+Pneumonia,Low,Low,0.0090507886815769,Low Risk
+Pneumonia,Low,Low,0.0199320716414549,Low Risk
+Pneumonia,Low,Low,0.0015238733905579,Low Risk
+Pneumonia,Low,Low,0.0260338616863447,Low Risk
+Pneumonia,Medium,Medium,0.0548676592420807,Low Risk
+Pneumonia,Medium,Medium,0.2672797825161521,Low Risk
+Pneumonia,Medium,Medium,0.2875280425734048,Low Risk
+Pneumonia,Medium,Medium,0.1107161184314827,Low Risk
+Pneumonia,High,High,0.7339624802398603,High Risk
+Pneumonia,Medium,Medium,0.3135797659607988,Moderate Risk
+Pneumonia,Medium,Medium,0.3278424329853842,Moderate Risk
+Pneumonia,Medium,Medium,0.0804654853905612,Low Risk
+Pneumonia,Medium,Low,0.0968523338252432,Low Risk
+Pneumonia,Medium,Medium,0.0819024041876154,Low Risk
+Pneumonia,Low,Low,0.0012258064516129,Low Risk
+Pneumonia,Low,Low,0.0356783824811463,Low Risk
+Pneumonia,Low,Low,0.0244457274426069,Low Risk
+Pneumonia,Medium,Medium,0.3312470048364926,Moderate Risk
+Pneumonia,Low,Low,0.009436901915301,Low Risk
+Pneumonia,Low,Low,0.0308876365932854,Low Risk
+Pneumonia,Low,Low,0.0255605802862028,Low Risk
+Pneumonia,Medium,Medium,0.363850146119713,Moderate Risk
+Pneumonia,Medium,Medium,0.2909336777011251,Low Risk
+Pneumonia,Low,Medium,0.0479925374180303,Low Risk
+Pneumonia,High,Medium,0.3991637829771992,Moderate Risk
+Pneumonia,Medium,Medium,0.2858622832339098,Low Risk
+Pneumonia,Medium,Medium,0.0864354638220979,Low Risk
+Pneumonia,High,High,0.7625986918138237,High Risk
+Pneumonia,Medium,Medium,0.153855167700344,Low Risk
+Pneumonia,High,High,0.7011587160411198,High Risk
+Pneumonia,Low,Low,0.0021189591078066,Low Risk
+Pneumonia,Low,Low,0.0115824424666932,Low Risk
+Pneumonia,Low,Low,0.0169009347541101,Low Risk
+Pneumonia,Medium,Low,0.0489397447779522,Low Risk
+Pneumonia,Medium,Medium,0.1411535338495834,Low Risk
+Pneumonia,Medium,Medium,0.1916154677911802,Low Risk
+Pneumonia,High,High,0.8441975826143979,High Risk
+Pneumonia,Low,Low,0.0104847367868255,Low Risk
+Pneumonia,Medium,Medium,0.3285332817348243,Moderate Risk
+Pneumonia,Low,Medium,0.0387254518336577,Low Risk
+Pneumonia,Low,Medium,0.0095783469350565,Low Risk
+Pneumonia,Medium,Medium,0.0474301464176817,Low Risk
+Pneumonia,High,High,0.5656460982119398,Moderate Risk
+Pneumonia,Medium,Medium,0.1010060148207772,Low Risk
+Pneumonia,Medium,Medium,0.3552768417126319,Moderate Risk
+Pneumonia,Medium,Medium,0.049870983782669,Low Risk
+Pneumonia,Medium,Medium,0.0358492077418729,Low Risk
+Pneumonia,Medium,Medium,0.0929823610433937,Low Risk
+Pneumonia,Low,Low,0.0279023204381353,Low Risk
+Pneumonia,Low,Low,0.0050383734195209,Low Risk
+Pneumonia,High,Medium,0.2172609772536551,Low Risk
+Pneumonia,High,High,0.6515105426637298,High Risk
+Pneumonia,Medium,Medium,0.3677408106484705,Moderate Risk
+Pneumonia,Low,Low,0.0078252926357499,Low Risk
+Pneumonia,Low,Low,0.0205135502519553,Low Risk
+Pneumonia,Low,Low,0.00168071950534,Low Risk
+Pneumonia,Medium,Medium,0.0394953617395528,Low Risk
+Pneumonia,High,High,0.5992332379447043,Moderate Risk
+Pneumonia,Medium,Medium,0.1815765050722699,Low Risk
+Pneumonia,Medium,Medium,0.0408963385370723,Low Risk
+Pneumonia,Medium,Medium,0.3049740670358485,Moderate Risk
+Pneumonia,Medium,Medium,0.4267448437690999,Moderate Risk
+Pneumonia,Medium,Medium,0.1067442798220386,Low Risk
+Pneumonia,Low,Low,0.0539564995378857,Low Risk
+Pneumonia,Low,Low,0.0067753150684734,Low Risk
+Pneumonia,Medium,Medium,0.1854729826294079,Low Risk
+Pneumonia,Medium,Medium,0.3209411420598219,Moderate Risk
+Pneumonia,High,High,0.6262913432030477,High Risk
+Pneumonia,Medium,Medium,0.2993577529722232,Low Risk
+Pneumonia,Medium,Low,0.1168708346592475,Low Risk
+Pneumonia,Medium,Medium,0.2364970886362001,Low Risk
+Pneumonia,Medium,Medium,0.4436717687772056,Moderate Risk
+Pneumonia,Low,Low,0.0163849690193283,Low Risk
+Pneumonia,Low,Low,0.019901427120153,Low Risk
+Pneumonia,Medium,Medium,0.4243660121223663,Moderate Risk
+Pneumonia,High,High,0.7944846427942497,High Risk
+Pneumonia,Medium,Medium,0.4414128460739395,Moderate Risk
+Pneumonia,Low,Low,0.0,Low Risk
+Pneumonia,Low,Low,0.013954853060526,Low Risk
+Pneumonia,High,High,0.6804609260155869,High Risk
+Pneumonia,High,High,0.6501418198968083,High Risk
+Pneumonia,Medium,Medium,0.1327567895930134,Low Risk
+Pneumonia,Medium,Medium,0.0744950573846249,Low Risk
+Pneumonia,High,High,0.947625328529854,High Risk
+Pneumonia,Low,Low,0.0030051295031348,Low Risk
+Pneumonia,Medium,Medium,0.4402049045890741,Moderate Risk
+Pneumonia,High,High,0.6255425687127633,High Risk
+Pneumonia,Medium,Medium,0.465127261570156,Moderate Risk
+Pneumonia,Low,Low,0.0228090711823972,Low Risk
+Pneumonia,Low,Low,0.0120904900271035,Low Risk
+Pneumonia,Medium,Medium,0.3190696261153277,Moderate Risk
+Pneumonia,Medium,Medium,0.0959306988179276,Low Risk
+Pneumonia,Medium,Medium,0.0858899817931466,Low Risk
+UTI,Medium,High,0.64,High Risk
+UTI,High,High,0.635,High Risk
+UTI,Medium,High,0.7183333333333334,High Risk
+UTI,High,High,0.94,High Risk
+UTI,High,High,0.715,High Risk
+UTI,Medium,High,0.49,Moderate Risk
+UTI,High,High,0.88,High Risk
+UTI,Medium,High,0.5425,Moderate Risk
+UTI,High,High,0.92,High Risk
+UTI,Low,Low,0.15125,Low Risk
+UTI,High,High,0.825,High Risk
+UTI,High,High,0.605,High Risk
+UTI,High,High,0.83,High Risk
+UTI,Medium,Low,0.13,Low Risk
+UTI,Low,Low,0.2,Low Risk
+UTI,Medium,Medium,0.14,Low Risk
+UTI,High,High,0.845,High Risk
+UTI,High,High,0.72,High Risk
+UTI,Medium,Medium,0.335,Moderate Risk
+UTI,Low,Low,0.32,Moderate Risk
+UTI,High,High,0.81,High Risk
+UTI,High,High,0.8,High Risk
+UTI,High,Medium,0.28,Low Risk
+UTI,High,High,0.575,Moderate Risk
+SSTI,Medium,Low,0.188239219114219,Low Risk
+SSTI,Medium,Medium,0.3366349206349206,Moderate Risk
+SSTI,Low,Low,0.0555810994560994,Low Risk
+SSTI,High,High,0.4171706349206349,Moderate Risk
+SSTI,Medium,Medium,0.3855916305916305,Moderate Risk
+SSTI,Medium,Medium,0.2181713564213564,Low Risk
+SSTI,Medium,Low,0.2426865079365079,Low Risk
+SSTI,Low,Low,0.2036360028860029,Low Risk
+SSTI,Medium,Medium,0.2225544733044732,Low Risk
+SSTI,High,Medium,0.361276455026455,Moderate Risk
+SSTI,Low,Low,0.1055691391941391,Low Risk
+SSTI,Low,Low,0.0529583333333333,Low Risk
+SSTI,Low,Low,0.0804464285714285,Low Risk
+SSTI,High,High,0.5154287240537241,Moderate Risk
+SSTI,Medium,Medium,0.2043690476190476,Low Risk
+SSTI,Low,Low,0.0271750700280112,Low Risk
+SSTI,Medium,Medium,0.4087958152958154,Moderate Risk
+SSTI,Low,Low,0.0621031746031746,Low Risk
+SSTI,High,High,0.606815476190476,High Risk
+SSTI,Medium,Medium,0.2227567155067154,Low Risk
+SSTI,High,High,0.4763650793650795,Moderate Risk
+SSTI,High,High,0.6514565018315019,High Risk
+SSTI,Low,Low,0.0958115634365634,Low Risk
+SSTI,Low,Low,0.0702878787878788,Low Risk
+SSTI,High,High,0.5343630952380952,Moderate Risk
+SSTI,Low,Medium,0.1524984827264238,Low Risk
+SSTI,Medium,Medium,0.2614690170940171,Low Risk
+SSTI,Low,Low,0.1907806637806637,Low Risk
+SSTI,Low,Low,0.1639365079365079,Low Risk
+SSTI,Medium,Medium,0.2111097883597884,Low Risk
+SSTI,Medium,Medium,0.2304788359788359,Low Risk
+SSTI,High,High,0.4903890415140415,Moderate Risk
+SSTI,Low,Low,0.0255416666666666,Low Risk
+SSTI,Medium,Medium,0.2019238677988677,Low Risk
+SSTI,High,High,0.7722498751248752,High Risk
+SSTI,High,High,0.572422619047619,Moderate Risk
+SSTI,Medium,Low,0.1983198051948052,Low Risk
+SSTI,Low,Low,0.0926845238095237,Low Risk
+SSTI,Medium,Medium,0.1960795454545454,Low Risk
+SSTI,High,Medium,0.4404976551226552,Moderate Risk
+SSTI,High,High,0.7650731074481075,High Risk
+SSTI,Low,Low,0.0499603729603729,Low Risk
+SSTI,High,High,0.6070932539682541,High Risk
+SSTI,High,High,0.6510456349206349,High Risk
+SSTI,Low,Low,0.0468690476190476,Low Risk
+SSTI,High,High,0.5784206349206349,Moderate Risk
+SSTI,High,High,0.730017857142857,High Risk
+SSTI,High,Medium,0.4132460317460319,Moderate Risk
+SSTI,Low,Low,0.0645595238095238,Low Risk
+SSTI,Low,Low,0.0494583333333333,Low Risk
+SSTI,Low,Low,0.2793551587301587,Low Risk
+SSTI,High,High,0.72096626984127,High Risk
+SSTI,Medium,High,0.4122023809523809,Moderate Risk
+SSTI,Medium,High,0.4481904761904763,Moderate Risk
+SSTI,High,High,0.5923605006105007,Moderate Risk
+SSTI,High,High,0.7205119047619047,High Risk
+SSTI,Medium,Medium,0.274324074074074,Low Risk
+SSTI,Medium,Medium,0.3025894660894661,Moderate Risk
+SSTI,Low,Low,0.2008944805194805,Low Risk
+SSTI,Low,Low,0.0902242063492063,Low Risk
+SSTI,Low,Low,0.0933108974358974,Low Risk
+SSTI,Medium,Low,0.2620324074074074,Low Risk
+SSTI,High,Medium,0.3971822344322345,Moderate Risk
+SSTI,Medium,Medium,0.2049821428571428,Low Risk
+SSTI,Low,Low,0.0847142857142857,Low Risk
+SSTI,Low,Low,0.0788715728715729,Low Risk
+SSTI,Medium,High,0.4390301226551226,Moderate Risk
+SSTI,Low,Low,0.0546071428571428,Low Risk
+SSTI,Medium,Medium,0.3725575396825397,Moderate Risk
+SSTI,Medium,Medium,0.2421967893217892,Low Risk
+Abdominal Infection,High,High,0.5964183434558957,Moderate Risk
+Abdominal Infection,Medium,Medium,0.0759102397720685,Low Risk
+Abdominal Infection,Medium,Medium,0.0228275424232877,Low Risk
+Abdominal Infection,High,Medium,0.4372250845718756,Moderate Risk
+Abdominal Infection,Medium,Medium,0.0553165023120769,Low Risk
+Abdominal Infection,Medium,Medium,0.3020199958709645,Moderate Risk
+Abdominal Infection,High,High,0.5348083024464275,Moderate Risk
+Abdominal Infection,Low,Low,0.0053058639959598,Low Risk
+Abdominal Infection,Medium,Medium,0.2683700377044,Low Risk
+Abdominal Infection,High,Medium,0.3248873287338531,Moderate Risk
+Abdominal Infection,Medium,Medium,0.1997390159979504,Low Risk
+Abdominal Infection,Medium,Medium,0.0512722617087542,Low Risk
+Abdominal Infection,Low,Low,0.0019850187265917,Low Risk
+Abdominal Infection,High,Medium,0.4384163167423266,Moderate Risk
+Abdominal Infection,Low,Low,0.0180940581114152,Low Risk
+Abdominal Infection,Medium,Medium,0.4349997517881751,Moderate Risk
+Abdominal Infection,Medium,Medium,0.1661688434463726,Low Risk
+Abdominal Infection,Low,Low,0.0065664934678074,Low Risk
+Abdominal Infection,Medium,Medium,0.1586908791100428,Low Risk
+Abdominal Infection,Low,Low,0.0095157730196685,Low Risk
+Abdominal Infection,Low,Low,0.0044804039088734,Low Risk
+Abdominal Infection,Low,Low,0.0050561401521678,Low Risk
+Abdominal Infection,Medium,Medium,0.1416018260564901,Low Risk
+Abdominal Infection,Medium,Medium,0.1219883066564636,Low Risk
+Abdominal Infection,Medium,Medium,0.0168252988701605,Low Risk
+Abdominal Infection,Medium,Medium,0.2064249301249979,Low Risk
+Abdominal Infection,Medium,Medium,0.0387344951251691,Low Risk
+Abdominal Infection,Medium,Medium,0.262580857592768,Low Risk
+Abdominal Infection,Low,Low,0.0323903077548147,Low Risk
+Abdominal Infection,Medium,Medium,0.0379376840865115,Low Risk
+Abdominal Infection,Medium,Medium,0.0209853312112823,Low Risk
+Abdominal Infection,Medium,Medium,0.2571417201518375,Low Risk
+Abdominal Infection,Low,Low,0.0115492255426483,Low Risk
+Abdominal Infection,High,High,0.4807107142769294,Moderate Risk
+Abdominal Infection,High,High,0.5197229581665356,Moderate Risk
+Abdominal Infection,Medium,Medium,0.0549481343667728,Low Risk
+Abdominal Infection,Medium,Medium,0.3600026835048036,Moderate Risk
+Abdominal Infection,Medium,Medium,0.2179410653675263,Low Risk
+Abdominal Infection,Medium,Medium,0.0740421863107275,Low Risk
+Abdominal Infection,Medium,Medium,0.0525755006289149,Low Risk
+Abdominal Infection,Medium,Medium,0.3352858912090536,Moderate Risk
+Abdominal Infection,Medium,Medium,0.2379131333314231,Low Risk
+Abdominal Infection,Medium,Medium,0.0630838144428126,Low Risk
+Abdominal Infection,High,High,0.6369766594051438,High Risk
+Abdominal Infection,High,High,0.5198946675491187,Moderate Risk
+Abdominal Infection,Medium,Medium,0.0654731586174275,Low Risk
+Abdominal Infection,Medium,Medium,0.2609890840315237,Low Risk
+Abdominal Infection,Medium,Medium,0.2632066743376016,Low Risk
+Abdominal Infection,Medium,Medium,0.1929933761844086,Low Risk
+Abdominal Infection,Medium,Medium,0.2354235029447451,Low Risk
+Abdominal Infection,High,High,0.768313811447306,High Risk
+Abdominal Infection,Medium,Medium,0.3367271334728183,Moderate Risk
+Abdominal Infection,Medium,Medium,0.0290911775839721,Low Risk
+Abdominal Infection,Medium,Medium,0.0730747631411879,Low Risk
+Abdominal Infection,High,High,0.5457125122966177,Moderate Risk
+Abdominal Infection,Medium,Medium,0.0768384179688228,Low Risk
+Abdominal Infection,Medium,Medium,0.0978273110973539,Low Risk
+Abdominal Infection,Medium,Medium,0.0299172934633003,Low Risk
+Abdominal Infection,Medium,Medium,0.242002397208544,Low Risk
+Abdominal Infection,Medium,Medium,0.0532975919868925,Low Risk
+Abdominal Infection,Medium,Medium,0.3436930758573396,Moderate Risk
+Abdominal Infection,Medium,Medium,0.0219361434044149,Low Risk
+Abdominal Infection,Medium,Medium,0.1906423074299366,Low Risk
+Abdominal Infection,Medium,Medium,0.2757957168299269,Low Risk
+Abdominal Infection,Medium,Medium,0.0959649033576,Low Risk
+Abdominal Infection,Medium,Medium,0.2401825722757192,Low Risk
+Abdominal Infection,Medium,Medium,0.2623428634912523,Low Risk
+Abdominal Infection,Medium,Medium,0.1687102498905067,Low Risk
+Abdominal Infection,Low,Low,0.0274008262023219,Low Risk
+Abdominal Infection,Medium,Medium,0.1914441938839063,Low Risk
+Abdominal Infection,Medium,Medium,0.0798287831908645,Low Risk
+Abdominal Infection,Medium,Medium,0.1888923956154704,Low Risk
+Abdominal Infection,Medium,Medium,0.0368928895691944,Low Risk
+Abdominal Infection,Medium,Medium,0.2243653200213619,Low Risk
+Abdominal Infection,Medium,Medium,0.0634459518809472,Low Risk
+Abdominal Infection,Medium,Medium,0.1211511812098594,Low Risk
+Abdominal Infection,Medium,Medium,0.2053998639994306,Low Risk
+Abdominal Infection,Medium,Medium,0.1000229813955197,Low Risk
+Abdominal Infection,Low,Low,0.032206480598945,Low Risk
+Abdominal Infection,Medium,Medium,0.1839915379678502,Low Risk
+Abdominal Infection,High,Medium,0.4643880541115353,Moderate Risk
+Abdominal Infection,Medium,Medium,0.3649319704279035,Moderate Risk
+Abdominal Infection,Medium,Medium,0.0459164161679994,Low Risk
+Abdominal Infection,Medium,Medium,0.0835308512511417,Low Risk
+Abdominal Infection,Medium,Medium,0.3289472170361471,Moderate Risk
+Abdominal Infection,Medium,Medium,0.2872883076261899,Low Risk
+Abdominal Infection,Medium,Medium,0.1354099020756241,Low Risk
+Abdominal Infection,Medium,Medium,0.2267835935113323,Low Risk
+Abdominal Infection,Medium,Medium,0.1186602082518335,Low Risk
+Abdominal Infection,Low,Low,0.0084850789971038,Low Risk
+Abdominal Infection,Low,Low,0.0566537443187619,Low Risk
+Abdominal Infection,Medium,Medium,0.0579167230162161,Low Risk
+Abdominal Infection,Medium,Medium,0.4066021970112211,Moderate Risk
+Abdominal Infection,High,Medium,0.4331583162597938,Moderate Risk
+Abdominal Infection,Medium,Medium,0.0425644818512499,Low Risk
+Abdominal Infection,Medium,Medium,0.3826199844369134,Moderate Risk
+Abdominal Infection,Low,Low,0.0,Low Risk
+Abdominal Infection,Low,Low,0.0097126294282026,Low Risk
+Abdominal Infection,Medium,Medium,0.0619396178161855,Low Risk
+Abdominal Infection,Medium,Medium,0.1684363236941882,Low Risk
+Abdominal Infection,Medium,Medium,0.0513538522613692,Low Risk
+Abdominal Infection,Medium,Medium,0.2019986640043091,Low Risk
+Abdominal Infection,Low,Medium,0.0962125033813199,Low Risk
+Abdominal Infection,Medium,Medium,0.0540978087654307,Low Risk
+Abdominal Infection,Low,Low,0.0014081834054505,Low Risk
+Abdominal Infection,Medium,Medium,0.0703034699946788,Low Risk
+Abdominal Infection,High,High,0.600580820981627,High Risk
+Abdominal Infection,Medium,Medium,0.0738526168767029,Low Risk
+Abdominal Infection,Medium,Medium,0.068491433463226,Low Risk
+Abdominal Infection,Medium,Medium,0.0348757765871873,Low Risk
+Abdominal Infection,High,Medium,0.4139462836832529,Moderate Risk
+Abdominal Infection,High,High,0.5073113228716094,Moderate Risk
+Abdominal Infection,Low,Medium,0.1103394515602952,Low Risk
+Abdominal Infection,Medium,Medium,0.1708386715214873,Low Risk
+Abdominal Infection,Medium,Medium,0.3335851432153048,Moderate Risk
+Abdominal Infection,Medium,Medium,0.0473629969919647,Low Risk
+Abdominal Infection,Medium,Medium,0.2369752555298777,Low Risk
+Abdominal Infection,Low,Low,0.0210702339745279,Low Risk
+Abdominal Infection,Low,Low,0.0028057636532625,Low Risk
+Abdominal Infection,Low,Medium,0.0647888648720538,Low Risk
+Abdominal Infection,High,High,0.767210633145735,High Risk
+Abdominal Infection,Medium,Medium,0.1209817426216331,Low Risk
+Abdominal Infection,Low,Low,0.0015571224712498,Low Risk
+Abdominal Infection,Medium,Medium,0.0436904023502778,Low Risk
+Abdominal Infection,Medium,Medium,0.0181287881723982,Low Risk
+Abdominal Infection,Medium,Medium,0.3654263027471319,Moderate Risk
+Abdominal Infection,High,Medium,0.4039711831429889,Moderate Risk
+Abdominal Infection,Low,Low,0.0282712946784115,Low Risk
+Abdominal Infection,Medium,Medium,0.0358953435621707,Low Risk
+Abdominal Infection,High,High,0.5629045183951262,Moderate Risk
+Abdominal Infection,Medium,Medium,0.0677460155497646,Low Risk
+Abdominal Infection,Medium,Medium,0.0075683284346956,Low Risk
+Abdominal Infection,Medium,Medium,0.1783091679330731,Low Risk
+Abdominal Infection,Medium,Medium,0.0757690769839931,Low Risk
+Abdominal Infection,Medium,Medium,0.4532847282527895,Moderate Risk
+Abdominal Infection,Medium,Medium,0.1536142718063899,Low Risk
+Abdominal Infection,High,Medium,0.2924996143201228,Low Risk
+Abdominal Infection,Medium,High,0.5258305466476105,Moderate Risk
+Abdominal Infection,Medium,Medium,0.1790007956580031,Low Risk
+Abdominal Infection,High,Medium,0.3902789664229024,Moderate Risk
+Abdominal Infection,Medium,Medium,0.4189025725406467,Moderate Risk
+Abdominal Infection,Medium,Medium,0.4588560210898606,Moderate Risk
+Abdominal Infection,Medium,Medium,0.0288620419600655,Low Risk
+Abdominal Infection,High,High,0.5530883125865086,Moderate Risk
+Abdominal Infection,High,High,0.5349817786972999,Moderate Risk
+Abdominal Infection,Low,Low,0.0682855421165928,Low Risk
+Abdominal Infection,Low,Low,0.0307738907762139,Low Risk
+Abdominal Infection,Low,Low,0.0048760270146994,Low Risk
+Abdominal Infection,Medium,Medium,0.242769572461226,Low Risk
+Abdominal Infection,Medium,Medium,0.0635538548697427,Low Risk
+Abdominal Infection,Medium,Medium,0.110358757110663,Low Risk
+Abdominal Infection,High,High,0.7354114331895485,High Risk
+Abdominal Infection,Medium,Medium,0.08764150327348,Low Risk
+Abdominal Infection,Low,Low,0.0180435157833316,Low Risk
+Abdominal Infection,Medium,Medium,0.3082710848159924,Moderate Risk
+Abdominal Infection,Medium,Medium,0.0239813469755348,Low Risk
+Abdominal Infection,Medium,Medium,0.233635969062729,Low Risk

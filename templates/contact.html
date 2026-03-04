@@ -1,0 +1,159 @@
+{% extends "base.html" %}
+{% block title %}Contact | Sepsis Risk Predictor{% endblock %}
+
+{% block content %}
+<style>
+  .contact-container {
+    max-width: 1000px;
+    margin: 60px auto;
+    background-color: rgba(17, 24, 39, 0.85);
+    backdrop-filter: blur(15px);
+    padding: 40px 30px;
+    border-radius: 16px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.35);
+  }
+
+  h1 {
+    text-align: center;
+    font-size: 2.6rem;
+    margin-bottom: 30px;
+    font-weight: 700;
+  }
+
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  @media (min-width: 768px) {
+    .contact-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  .contact-card, .info-card {
+    background-color: rgba(255, 255, 255, 0.05);
+    padding: 30px;
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+  }
+
+  h2 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    font-weight: 600;
+  }
+
+  label {
+    font-size: 0.9rem;
+    margin-bottom: 6px;
+    color: #dddddd;
+    display: block;
+  }
+
+  input, textarea {
+    width: 100%;
+    background: #111827;
+    border: 1px solid #374151;
+    padding: 12px;
+    color: #fff;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    margin-bottom: 15px;
+  }
+
+  input:focus, textarea:focus {
+    outline: none;
+    border-color: #00e6e6;
+  }
+
+  .btn-submit {
+    background: transparent;
+    border: 2px solid #00e6e6;
+    color: #00e6e6;
+    padding: 12px 28px;
+    font-weight: 600;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    width: 100%;
+    transition: all 0.3s ease;
+  }
+
+  .btn-submit:hover {
+    background-color: #00e6e6;
+    color: #000;
+  }
+
+  p {
+    font-size: 0.95rem;
+    color: #cccccc;
+    line-height: 1.6;
+  }
+</style>
+
+<div class="contact-container">
+  <h1>Contact Us</h1>
+
+  <div class="contact-grid">
+    <!-- Contact Form -->
+    <div class="contact-card">
+      <h2>Send a Message</h2>
+      <form onsubmit="sendEmail(event)">
+        <label for="name">Name</label>
+        <input type="text" id="name" placeholder="Your full name" required>
+
+        <label for="email">Email</label>
+        <input type="email" id="email" placeholder="Your email address" required>
+
+        <label for="message">Message</label>
+        <textarea id="message" rows="5" placeholder="Write your query or feedback here..." required></textarea>
+
+        <button type="submit" class="btn-submit">Send Message</button>
+      </form>
+    </div>
+
+    <!-- Project Info -->
+    <div class="info-card">
+      <h2>Project Information</h2>
+      <p>
+        <strong>Project Title:</strong><br>
+        Early Detection of Sepsis (Disease-Specific, Non-ICU)
+      </p>
+
+      <p>
+        This system is developed as a <strong>Final-Year B.Tech Major Project</strong> 
+        using Machine Learning to assist in early sepsis risk identification.
+      </p>
+
+      <p>
+        <strong>Contact Email:</strong><br>
+        furkaanmanzoor333@gmail.com
+      </p>
+
+      <p>
+        We usually respond within <strong>24–48 hours</strong>.
+      </p>
+    </div>
+  </div>
+</div>
+
+<script>
+  function sendEmail(event) {
+    event.preventDefault();
+
+    const name = document.getElementById("name").value.trim();
+    const email = document.getElementById("email").value.trim();
+    const message = document.getElementById("message").value.trim();
+
+    const subject = encodeURIComponent("Sepsis Predictor – Contact Message from " + name);
+    const body = encodeURIComponent(
+      `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`
+    );
+
+    const mailtoLink = `https://mail.google.com/mail/?view=cm&fs=1&to=furkaanmanzoor333@gmail.com&su=${subject}&body=${body}`;
+    window.open(mailtoLink, "_blank");
+  }
+</script>
+{% endblock %}

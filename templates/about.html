@@ -1,0 +1,225 @@
+{% extends "base.html" %}
+{% block title %}About | Early Detection of Sepsis{% endblock %}
+
+{% block content %}
+<style>
+  body {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.7), rgba(5, 15, 35, 0.8)),
+                url("{{ url_for('static', filename='images/medical-background.jpg') }}")
+                no-repeat center center/cover;
+    color: #ffffff;
+  }
+
+  .about-container {
+    max-width: 1050px;
+    margin: 60px auto;
+    background: rgba(25, 35, 65, 0.9);
+    backdrop-filter: blur(15px);
+    padding: 45px 35px;
+    border-radius: 18px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.45);
+  }
+
+  h1 {
+    text-align: center;
+    font-size: 2.8rem;
+    margin-bottom: 30px;
+    font-weight: 700;
+  }
+
+  h2 {
+    margin-top: 35px;
+    font-size: 1.5rem;
+    font-weight: 600;
+  }
+
+  p, li {
+    font-size: 0.95rem;
+    line-height: 1.8;
+    color: #e0e0e0;
+  }
+
+  ul {
+    padding-left: 22px;
+  }
+
+  a.ref-link {
+    color: #4fd1ff;
+    text-decoration: none;
+    font-size: 0.9rem;
+  }
+
+  a.ref-link:hover {
+    text-decoration: underline;
+  }
+</style>
+
+<div class="about-container">
+
+  <h1>Early Detection of Sepsis</h1>
+
+  <!-- PROJECT OVERVIEW -->
+  <h2>Project Overview</h2>
+  <p>
+    <strong>Early Detection of Sepsis</strong> is a disease-specific, non-ICU
+    clinical decision-support system developed using Machine Learning.
+    The objective is to identify patients at risk of sepsis
+    <strong>before ICU admission</strong>, enabling early medical intervention
+    and improved survival outcomes.
+  </p>
+
+  <!-- WHAT IS SEPSIS -->
+  <h2>What is Sepsis?</h2>
+  <p>
+    Sepsis is a life-threatening condition caused by the body’s extreme immune
+    response to infection. If not detected early, it can rapidly progress to
+    organ failure and death. Early identification significantly increases the
+    probability of successful treatment.
+  </p>
+
+  <!-- DISEASE SPECIFIC APPROACH -->
+  <h2>Why Disease-Specific & Non-ICU?</h2>
+  <ul>
+    <li>Most existing models focus on ICU patient data</li>
+    <li>Early prediction is more valuable <strong>before ICU admission</strong></li>
+    <li>Different infections lead to sepsis through different clinical pathways</li>
+  </ul>
+  <p>
+    Therefore, this system uses <strong>disease-specific models</strong>
+    trained independently for:
+  </p>
+  <ul>
+    <li>Pneumonia</li>
+    <li>Urinary Tract Infection (UTI)</li>
+    <li>Intra-Abdominal Infection</li>
+    <li>Skin & Soft Tissue Infection (SSTI)</li>
+  </ul>
+
+  <!-- SYSTEM ARCHITECTURE -->
+  <h2>System Architecture</h2>
+  <p>
+    Each disease has an independently trained Machine Learning model.
+    At runtime:
+  </p>
+  <ul>
+    <li>The selected disease determines which model, scaler, and feature configuration are loaded.</li>
+    <li>Input features are dynamically aligned with the trained model structure.</li>
+    <li>The appropriate serialized model generates the prediction.</li>
+  </ul>
+  <p>
+    This modular architecture ensures scalability, maintainability,
+    and disease-wise performance optimization.
+  </p>
+
+  <!-- PREDICTION STRATEGY -->
+  <h2>Prediction Strategy</h2>
+  <p>The system follows a two-stage prediction mechanism:</p>
+  <ul>
+    <li>
+      <strong>Binary Classification:</strong>
+      Predicts whether the patient is at risk of sepsis (Yes / No).
+    </li>
+    <li>
+      <strong>Probability Estimation:</strong>
+      The model outputs a confidence score (0–1) representing
+      the estimated likelihood of sepsis.
+    </li>
+    <li>
+      <strong>Risk Stratification:</strong>
+      Based on probability thresholds:
+      <ul>
+        <li>Low Risk → Probability &lt; 0.30</li>
+        <li>Medium Risk → 0.30 – 0.60</li>
+        <li>High Risk → &gt; 0.60</li>
+      </ul>
+    </li>
+  </ul>
+
+  <p>
+    <strong>Model Confidence</strong> represents the predicted probability.
+    For example, a confidence of 0.58 indicates an estimated 58% likelihood
+    of sepsis according to the trained classifier.
+  </p>
+
+  <!-- MACHINE LEARNING -->
+  <h2>Machine Learning Model</h2>
+  <p>
+    The system uses a <strong>Random Forest Classifier</strong> due to its:
+  </p>
+  <ul>
+    <li>High accuracy on structured clinical datasets</li>
+    <li>Ability to model nonlinear relationships</li>
+    <li>Robustness against overfitting</li>
+    <li>Feature importance analysis capability</li>
+  </ul>
+
+  <!-- FEATURES -->
+  <h2>Clinical Features Used</h2>
+  <ul>
+    <li>Age</li>
+    <li>Body Temperature</li>
+    <li>Heart Rate</li>
+    <li>Respiratory Rate</li>
+    <li>Systolic Blood Pressure</li>
+    <li>Platelet Count</li>
+    <li>Disease-specific clinical indicators</li>
+  </ul>
+
+  <!-- WEB APP FEATURES -->
+  <h2>Web Application Features</h2>
+  <ul>
+    <li>User Registration & Login System</li>
+    <li>Email OTP Verification</li>
+    <li>Password Recovery</li>
+    <li>Disease-Specific Dynamic Prediction Forms</li>
+    <li>Prediction History Tracking</li>
+    <li>Secure Backend Integration using Flask</li>
+  </ul>
+
+  <!-- ACADEMIC VALUE -->
+  <h2>Academic & Technical Value</h2>
+  <p>
+    This project demonstrates the complete lifecycle of a Medical AI system:
+  </p>
+  <ul>
+    <li>Clinical data preprocessing & cleaning</li>
+    <li>Disease-wise feature engineering</li>
+    <li>Independent model training & evaluation</li>
+    <li>Model serialization using Pickle</li>
+    <li>Backend deployment using Flask</li>
+    <li>Secure authentication & database integration</li>
+  </ul>
+
+  <!-- DISCLAIMER -->
+  <h2>Disclaimer</h2>
+  <p>
+    This application is developed strictly for academic and research purposes.
+    It is not a substitute for professional medical diagnosis, advice,
+    or treatment.
+  </p>
+
+  <!-- REFERENCES -->
+  <h2>References</h2>
+  <ul>
+    <li>
+      <a class="ref-link" href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7372215/" target="_blank">
+        Machine Learning for Sepsis Prediction (PMC)
+      </a>
+    </li>
+    <li>
+      <a class="ref-link" href="https://jamanetwork.com/journals/jama/fullarticle/2731196" target="_blank">
+        Early Identification of Sepsis (JAMA)
+      </a>
+    </li>
+    <li>
+      <a class="ref-link" href="https://www.who.int/news-room/fact-sheets/detail/sepsis" target="_blank">
+        World Health Organization – Sepsis
+      </a>
+    </li>
+  </ul>
+
+</div>
+
+{% endblock %}

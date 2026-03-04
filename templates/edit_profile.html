@@ -1,0 +1,147 @@
+{% extends "base.html" %}
+{% block title %}Edit Profile | Sepsis Risk Predictor{% endblock %}
+
+{% block content %}
+<style>
+  .hero {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 45vh;
+    padding: 0 20px;
+  }
+
+  .hero h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 16px;
+  }
+
+  .hero p {
+    font-size: 1.05rem;
+    max-width: 600px;
+    color: #dddddd;
+  }
+
+  .edit-card {
+    background-color: rgba(17, 24, 39, 0.85);
+    backdrop-filter: blur(15px);
+    padding: 30px;
+    border-radius: 16px;
+    max-width: 500px;
+    margin: -60px auto 40px auto;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.35);
+  }
+
+  h5 {
+    margin-bottom: 12px;
+    font-weight: 600;
+  }
+
+  input.form-control {
+    background-color: rgba(0,0,0,0.55);
+    color: #fff;
+    border: 1px solid #374151;
+    border-radius: 8px;
+    padding: 10px;
+    margin-bottom: 15px;
+    width: 100%;
+  }
+
+  input.form-control:focus {
+    outline: none;
+    border-color: #00e6e6;
+  }
+
+  input.form-control::placeholder {
+    color: #aaa;
+  }
+
+  button.btn {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #00e6e6;
+    color: #00e6e6;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 1rem;
+    background-color: transparent;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+
+  button.btn:hover {
+    background-color: #00e6e6;
+    color: #000;
+    box-shadow: 0 0 10px #00e6e6;
+  }
+
+  @media (max-width: 768px) {
+    .hero h1 {
+      font-size: 2.2rem;
+    }
+  }
+</style>
+
+<section class="hero">
+  <h1>Edit Profile</h1>
+  <p>
+    Manage your account details for the <strong>Early Detection of Sepsis</strong> system
+  </p>
+</section>
+
+<div class="edit-card">
+
+  <!-- 🔹 Username Update -->
+  <form method="POST">
+    <input type="hidden" name="action" value="update_username">
+    <h5>Change Username</h5>
+    <input
+      type="text"
+      name="new_username"
+      value="{{ user['username'] }}"
+      class="form-control"
+      placeholder="New Username"
+      required
+    >
+    <button type="submit" class="btn">Update Username</button>
+  </form>
+
+  <hr style="margin: 25px 0; border-color: #374151;">
+
+  <!-- 🔹 Password Update -->
+  <form method="POST">
+    <input type="hidden" name="action" value="update_password">
+    <h5>Change Password</h5>
+
+    <input
+      type="password"
+      name="current_password"
+      class="form-control"
+      placeholder="Current Password"
+      required
+    >
+
+    <input
+      type="password"
+      name="new_password"
+      class="form-control"
+      placeholder="New Password"
+      required
+    >
+
+    <input
+      type="password"
+      name="confirm_password"
+      class="form-control"
+      placeholder="Confirm New Password"
+      required
+    >
+
+    <button type="submit" class="btn">Change Password</button>
+  </form>
+
+</div>
+{% endblock %}

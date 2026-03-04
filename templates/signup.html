@@ -1,0 +1,127 @@
+{% extends "base.html" %}
+
+{% block title %}Sign Up | SepsisRisk AI{% endblock %}
+
+{% block content %}
+<!-- Decorative shapes -->
+<div style="position:absolute; top:-50px; left:-50px; width:300px; height:300px;
+background:linear-gradient(135deg,#00e6e6,#1c1c3c); border-radius:50%; opacity:0.5;"></div>
+
+<div style="position:absolute; top:120px; left:-80px; width:200px; height:200px;
+background:#3b3d6d; border-radius:50%; opacity:0.4;"></div>
+
+<style>
+  input:focus {
+    border-bottom: 1px solid #00e6e6 !important;
+  }
+</style>
+
+<div style="position:relative; display:flex; justify-content:center; align-items:center; height:100vh;">
+  <div style="background-color:#32345a; padding:40px 30px; border-radius:16px;
+              box-shadow:0 4px 15px rgba(0,0,0,0.4); width:320px;">
+
+    <!-- Logo -->
+    <h2 style="text-align:center; font-weight:700; font-size:22px;">SepsisRisk AI</h2>
+    <p style="text-align:center; font-size:11px; color:#ccc;">
+      Early Sepsis Detection • Disease-Specific • Non-ICU
+    </p>
+
+    <!-- Title -->
+    <h3 style="text-align:center; font-size:16px; margin:25px 0 20px;">
+      Create Your Account
+    </h3>
+
+    <!-- Error -->
+    {% if error %}
+      <div style="color:#ff4d4f; margin-bottom:15px; text-align:center;">
+        {{ error }}
+      </div>
+    {% endif %}
+
+    <!-- Signup Form -->
+    <form method="POST" action="{{ url_for('signup') }}">
+
+      <label style="font-size:12px; color:#aaa;">Username</label>
+      <input type="text" name="username" required
+             style="width:100%; background:transparent; border:none;
+                    border-bottom:1px solid #555; color:white;
+                    padding:6px 5px; margin-bottom:18px; font-size:13px;">
+
+      <label style="font-size:12px; color:#aaa;">Email</label>
+      <input type="email" name="email" required
+             style="width:100%; background:transparent; border:none;
+                    border-bottom:1px solid #555; color:white;
+                    padding:6px 5px; margin-bottom:18px; font-size:13px;">
+
+      <label style="font-size:12px; color:#aaa;">Confirm Email</label>
+      <input type="email" name="confirm_email" required
+             style="width:100%; background:transparent; border:none;
+                    border-bottom:1px solid #555; color:white;
+                    padding:6px 5px; margin-bottom:18px; font-size:13px;">
+
+      <label style="font-size:12px; color:#aaa;">Password</label>
+      <div style="position:relative;">
+        <input type="password" id="passwordField" name="password" required
+               style="width:100%; background:transparent; border:none;
+                      border-bottom:1px solid #555; color:white;
+                      padding:6px 5px; font-size:13px;">
+        <span id="togglePassword"
+              style="position:absolute; right:5px; top:5px; cursor:pointer;
+                     color:#0ff; font-size:15px;">👁</span>
+      </div>
+
+      <label style="font-size:12px; color:#aaa; margin-top:14px;">
+        Confirm Password
+      </label>
+      <div style="position:relative;">
+        <input type="password" id="confirmPasswordField" name="confirm_password" required
+               style="width:100%; background:transparent; border:none;
+                      border-bottom:1px solid #555; color:white;
+                      padding:6px 5px; font-size:13px;">
+        <span id="toggleConfirmPassword"
+              style="position:absolute; right:5px; top:5px; cursor:pointer;
+                     color:#0ff; font-size:15px;">👁</span>
+      </div>
+
+      <button type="submit"
+              style="width:100%; background:#00e6e6; border:none;
+                     padding:10px 0; border-radius:6px; color:#000;
+                     font-weight:600; font-size:14px; cursor:pointer;
+                     margin-top:22px;">
+        Sign Up
+      </button>
+    </form>
+
+    <p style="text-align:center; margin-top:22px; color:#aaa; font-size:12px;">
+      Already have an account?
+      <a href="{{ url_for('login') }}" style="color:#00e6e6; text-decoration:none;">
+        Login
+      </a>
+    </p>
+
+  </div>
+
+  <!-- Floating Help Button -->
+  <a href="{{ url_for('contact') }}"
+     style="position:absolute; bottom:30px; right:30px;
+            background:#00e6e6; color:#000; text-decoration:none;
+            border-radius:50%; width:45px; height:45px;
+            display:flex; align-items:center; justify-content:center;
+            font-size:18px; box-shadow:0 4px 10px rgba(0,0,0,0.3);">
+    ?
+  </a>
+</div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    const p = document.getElementById("passwordField");
+    const cp = document.getElementById("confirmPasswordField");
+
+    document.getElementById("togglePassword").onclick = () =>
+      p.type = p.type === "password" ? "text" : "password";
+
+    document.getElementById("toggleConfirmPassword").onclick = () =>
+      cp.type = cp.type === "password" ? "text" : "password";
+  });
+</script>
+{% endblock %}

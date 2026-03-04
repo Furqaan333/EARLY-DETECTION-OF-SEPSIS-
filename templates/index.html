@@ -1,0 +1,91 @@
+{% extends "base.html" %}
+{% block title %}Home | Sepsis Risk Predictor{% endblock %}
+
+{% block content %}
+<style>
+  body {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    background-color: #000;
+    color: #fff;
+  }
+
+  .hero {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 100vh;
+    padding: 0 20px;
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.75), rgba(10, 10, 20, 0.75)),
+                url("{{ url_for('static', filename='images/medical-background.jpg') }}") 
+                no-repeat center center/cover;
+    background-size: cover;
+  }
+
+  .hero h1 {
+    font-size: 3.2rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+  }
+
+  .hero p {
+    font-size: 1.1rem;
+    max-width: 700px;
+    margin-bottom: 30px;
+    color: #dddddd;
+    line-height: 1.6;
+  }
+
+  .btn {
+    display: inline-block;
+    padding: 12px 30px;
+    border: 2px solid #00e6e6;
+    color: #00e6e6;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 500;
+    font-size: 1.05rem;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+
+  .btn:hover {
+    background-color: #00e6e6;
+    color: #000;
+  }
+
+  @media (max-width: 768px) {
+    .hero h1 {
+      font-size: 2.2rem;
+    }
+
+    .hero p {
+      font-size: 1rem;
+    }
+
+    .btn {
+      width: 100%;
+      padding: 14px;
+    }
+  }
+</style>
+
+<section class="hero">
+  <h1>Early Detection of Sepsis Using AI</h1>
+
+  <p>
+    A disease-specific, non-ICU clinical decision support system that predicts
+    early sepsis risk caused by Pneumonia, Urinary Tract Infection (UTI),
+    Abdominal Infection, and Skin & Soft Tissue Infection (SSTI)
+    using machine learning.
+  </p>
+
+  {% if session.get('user') %}
+    <a href="{{ url_for('predict') }}" class="btn">Predict Sepsis Risk</a>
+  {% else %}
+    <a href="{{ url_for('login') }}" class="btn">Login to Get Started</a>
+  {% endif %}
+</section>
+
+{% endblock %}

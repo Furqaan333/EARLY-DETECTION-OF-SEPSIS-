@@ -1,0 +1,130 @@
+{% extends "base.html" %}
+
+{% block content %}
+<!-- Left decorative shapes -->
+<div style="position: absolute; top: -50px; left: -50px; width: 300px; height: 300px;
+background: linear-gradient(135deg, #00e6e6, #1c1c3c);
+border-radius: 50%; opacity: 0.5; z-index: 0;"></div>
+
+<div style="position: absolute; top: 120px; left: -80px; width: 200px; height: 200px;
+background: #3b3d6d; border-radius: 50%; opacity: 0.4; z-index: 0;"></div>
+
+<div style="position: relative; display: flex; justify-content: center; align-items: center;
+height: 100vh; z-index: 1;">
+
+  <div style="background-color: #32345a; padding: 40px 30px;
+  border-radius: 16px; box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+  width: 340px; position: relative;">
+
+    <!-- App Title -->
+    <h2 style="text-align: center; font-weight: 700;
+    font-size: 22px; margin-bottom: 5px;">
+      SepsisRisk AI
+    </h2>
+
+    <p style="text-align: center; font-size: 11px; color: #ccc;">
+      Disease-Specific Early Sepsis Detection
+    </p>
+
+    <!-- Welcome -->
+    <h3 style="text-align: center; font-size: 16px;
+    margin: 25px 0 20px 0;">
+      Welcome Back
+    </h3>
+
+    <!-- Error display -->
+    {% if error %}
+      <div style="color: #ff4d4f; margin-bottom: 20px; text-align: center;">
+        {{ error }}
+      </div>
+    {% endif %}
+
+    <!-- Login form -->
+    <form method="POST" action="{{ url_for('login') }}">
+
+      <label style="font-size: 12px; color: #aaa;">
+        Username or Email
+      </label>
+      <input type="text" name="username" required
+        style="width: 100%; background: transparent; border: none;
+        border-bottom: 1px solid #555; color: white;
+        padding: 6px 5px; margin-bottom: 20px;
+        font-size: 13px; outline: none;">
+
+      <label style="font-size: 12px; color: #aaa;">
+        Password
+      </label>
+
+      <div style="position: relative;">
+        <input type="password" id="passwordField"
+          name="password" required
+          placeholder="••••••••"
+          style="width: 100%; background: transparent;
+          border: none; border-bottom: 1px solid #555;
+          color: white; padding: 6px 5px;
+          font-size: 13px; outline: none;">
+
+        <span id="togglePassword"
+          style="position: absolute; right: 5px; top: 5px;
+          cursor: pointer; color: #00e6e6; font-size: 15px;">
+          👁
+        </span>
+      </div>
+
+      <!-- Sign in Button -->
+      <button type="submit"
+        style="width: 100%; background-color: #00e6e6;
+        border: none; padding: 10px 0; border-radius: 6px;
+        color: #000; font-weight: 600;
+        font-size: 14px; cursor: pointer;
+        margin-top: 22px;">
+        Sign In
+      </button>
+    </form>
+
+    <!-- Forgot password -->
+    <div style="text-align: center; margin-top: 15px;">
+      <a href="{{ url_for('forgot_password') }}"
+        style="font-size: 11px; color: #ccc; text-decoration: none;">
+        Forgot Password?
+      </a>
+    </div>
+
+    <!-- Sign up -->
+    <p style="text-align: center; margin-top: 25px;
+    color: #aaa; font-size: 12px;">
+      Don’t have an account?
+      <a href="{{ url_for('signup') }}"
+        style="color: #00e6e6; text-decoration: none;">
+        Sign up
+      </a>
+    </p>
+
+  </div>
+
+  <!-- Floating contact button -->
+  <a href="{{ url_for('contact') }}"
+    style="position: absolute; bottom: 20px; right: 20px;
+    background-color: #00e6e6; color: #000;
+    text-decoration: none; border-radius: 50%;
+    width: 45px; height: 45px; display: flex;
+    align-items: center; justify-content: center;
+    font-size: 18px; box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    cursor: pointer;">
+    ?
+  </a>
+</div>
+
+<!-- Toggle password visibility -->
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const toggle = document.getElementById("togglePassword");
+  const password = document.getElementById("passwordField");
+
+  toggle.addEventListener("click", function () {
+    const type = password.getAttribute("type") === "password" ? "text" : "password";
+    password.setAttribute("type", type);
+  });
+});
+</script>
+{% endblock %}

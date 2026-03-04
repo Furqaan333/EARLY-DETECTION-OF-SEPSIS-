@@ -1,0 +1,143 @@
+{% extends "base.html" %}
+
+{% block title %}Dashboard | SepsisRisk AI{% endblock %}
+
+{% block content %}
+<style>
+  body {
+    font-family: 'Inter', sans-serif;
+    color: #ffffff;
+  }
+
+  .dashboard {
+    text-align: center;
+    margin-top: 80px;
+    padding: 0 20px;
+  }
+
+  .dashboard h1 {
+    font-size: 2.6rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+  }
+
+  .dashboard p {
+    font-size: 1.05rem;
+    color: #cccccc;
+    max-width: 700px;
+    margin: 0 auto;
+  }
+
+  .cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 30px;
+    margin-top: 60px;
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .card {
+    background-color: rgba(50, 52, 90, 0.8);
+    backdrop-filter: blur(14px);
+    padding: 30px 25px;
+    border-radius: 16px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.35);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 40px rgba(0,0,0,0.5);
+  }
+
+  .card h3 {
+    font-size: 1.4rem;
+    margin-bottom: 12px;
+  }
+
+  .card p {
+    font-size: 0.95rem;
+    color: #dddddd;
+    margin-bottom: 25px;
+  }
+
+  .card a {
+    display: inline-block;
+    padding: 12px 26px;
+    border: 2px solid #00e6e6;
+    color: #00e6e6;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 500;
+    font-size: 0.95rem;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+
+  .card a:hover {
+    background-color: #00e6e6;
+    color: #000;
+  }
+
+  .note {
+    margin-top: 60px;
+    font-size: 0.9rem;
+    color: #bbbbbb;
+  }
+
+  @media (max-width: 768px) {
+    .dashboard h1 {
+      font-size: 2.1rem;
+    }
+  }
+</style>
+
+<div class="dashboard">
+  <h1>Welcome, {{ session['user'] }} 👋</h1>
+  <p>
+    This system helps in <strong>early detection of sepsis</strong> using
+    <strong>disease-specific machine learning models</strong> for non-ICU patients.
+  </p>
+
+  <div class="cards">
+
+    <!-- Prediction Card -->
+    <div class="card">
+      <h3>🩺 Predict Sepsis Risk</h3>
+      <p>
+        Enter patient clinical details to detect early sepsis risk,
+        severity level, and the disease causing the risk.
+      </p>
+      <a href="{{ url_for('predict') }}">Start Prediction</a>
+    </div>
+
+    <!-- History Card -->
+    <div class="card">
+      <h3>📊 Prediction History</h3>
+      <p>
+        View all your past sepsis predictions, including probability,
+        disease type, and risk level.
+      </p>
+      <a href="{{ url_for('history') }}">View History</a>
+    </div>
+
+    <!-- About Card -->
+    <div class="card">
+      <h3>ℹ️ About Project</h3>
+      <p>
+        Learn about the medical background, datasets, machine learning
+        models, and research motivation behind this project.
+      </p>
+      <a href="{{ url_for('about') }}">About Project</a>
+    </div>
+
+  </div>
+
+  <div class="note">
+    ⚠️ <strong>Disclaimer:</strong> This tool is intended for academic and research purposes only.
+    It does not replace professional medical diagnosis.
+  </div>
+</div>
+{% endblock %}
