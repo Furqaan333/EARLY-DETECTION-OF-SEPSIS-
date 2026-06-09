@@ -32,7 +32,8 @@
     }
   }
 
-  .contact-card, .info-card {
+  .contact-card,
+  .info-card {
     background-color: rgba(255, 255, 255, 0.05);
     padding: 30px;
     border-radius: 16px;
@@ -52,7 +53,8 @@
     display: block;
   }
 
-  input, textarea {
+  input,
+  textarea {
     width: 100%;
     background: #111827;
     border: 1px solid #374151;
@@ -61,9 +63,11 @@
     border-radius: 8px;
     font-size: 0.95rem;
     margin-bottom: 15px;
+    box-sizing: border-box;
   }
 
-  input:focus, textarea:focus {
+  input:focus,
+  textarea:focus {
     outline: none;
     border-color: #00e6e6;
   }
@@ -94,37 +98,78 @@
 </style>
 
 <div class="contact-container">
+
   <h1>Contact Us</h1>
 
   <div class="contact-grid">
+
     <!-- Contact Form -->
     <div class="contact-card">
+
       <h2>Send a Message</h2>
-      <form onsubmit="sendEmail(event)">
+
+      <form id="contactForm" onsubmit="sendEmail(event)">
+
         <label for="name">Name</label>
-        <input type="text" id="name" placeholder="Your full name" required>
+
+        <input
+          type="text"
+          id="name"
+          name="name"
+          placeholder="Your name"
+          required
+          minlength="2"
+          maxlength="50"
+          pattern="^[A-Za-z ]+$"
+          title="Name should contain only letters and spaces"
+        >
 
         <label for="email">Email</label>
-        <input type="email" id="email" placeholder="Your email address" required>
+
+        <input
+          type="email"
+          id="email"
+          placeholder="Your email address"
+          required
+        >
 
         <label for="message">Message</label>
-        <textarea id="message" rows="5" placeholder="Write your query or feedback here..." required></textarea>
 
-        <button type="submit" class="btn-submit">Send Message</button>
+        <textarea
+          id="message"
+          rows="5"
+          minlength="10"
+          maxlength="1000"
+          placeholder="Write your query or feedback here..."
+          required
+        ></textarea>
+
+        <button
+          type="submit"
+          class="btn-submit"
+        >
+          Send Message
+        </button>
+
       </form>
+
     </div>
 
-    <!-- Project Info -->
+    <!-- Project Information -->
     <div class="info-card">
+
       <h2>Project Information</h2>
+
       <p>
         <strong>Project Title:</strong><br>
-        Early Detection of Sepsis (Disease-Specific, Non-ICU)
+        Early Prediction of Sepsis (Disease-Specific, Non-ICU)
       </p>
 
       <p>
-        This system is developed as a <strong>Final-Year B.Tech Major Project</strong> 
-        using Machine Learning to assist in early sepsis risk identification.
+        This system is developed as a
+        <strong>Final-Year B.Tech Major Project</strong>
+        using Machine Learning to assist in early sepsis risk
+        identification.
       </p>
 
       <p>
@@ -133,27 +178,79 @@
       </p>
 
       <p>
-        We usually respond within <strong>24–48 hours</strong>.
+        We usually respond within
+        <strong>24–48 hours</strong>.
       </p>
+
     </div>
+
   </div>
+
 </div>
 
+<!-- Name Validation -->
 <script>
-  function sendEmail(event) {
+document.addEventListener("DOMContentLoaded", () => {
+
+    const nameField = document.getElementById("name");
+
+    nameField.addEventListener("input", function () {
+
+        // Allow only letters and spaces
+        this.value = this.value.replace(/[^a-zA-Z ]/g, "");
+
+        // Prevent multiple spaces
+        this.value = this.value.replace(/\s{2,}/g, " ");
+
+    });
+
+});
+</script>
+
+<!-- Form Submission Validation -->
+<script>
+function sendEmail(event) {
+
     event.preventDefault();
 
     const name = document.getElementById("name").value.trim();
     const email = document.getElementById("email").value.trim();
     const message = document.getElementById("message").value.trim();
 
-    const subject = encodeURIComponent("Sepsis Predictor – Contact Message from " + name);
-    const body = encodeURIComponent(
-      `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`
+    const nameRegex = /^[A-Za-z ]+$/;
+
+    if (!nameRegex.test(name)) {
+        alert("Name should contain only letters and spaces.");
+        return;
+    }
+
+    if (name.length < 2) {
+        alert("Please enter a valid name.");
+        return;
+    }
+
+    if (message.length < 10) {
+        alert("Message should contain at least 10 characters.");
+        return;
+    }
+
+    const subject = encodeURIComponent(
+        "Sepsis Predictor – Contact Message from " + name
     );
 
-    const mailtoLink = `https://mail.google.com/mail/?view=cm&fs=1&to=furkaanmanzoor333@gmail.com&su=${subject}&body=${body}`;
+    const body = encodeURIComponent(
+        `Name: ${name}
+Email: ${email}
+
+Message:
+${message}`
+    );
+
+    const mailtoLink =
+        `https://mail.google.com/mail/?view=cm&fs=1&to=furkaanmanzoor333@gmail.com&su=${subject}&body=${body}`;
+
     window.open(mailtoLink, "_blank");
-  }
+}
 </script>
+
 {% endblock %}

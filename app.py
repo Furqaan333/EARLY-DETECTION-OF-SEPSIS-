@@ -1,5 +1,4 @@
 # IMPORT REQUIRED LIBRARIES
-from xml.parsers.expat import model
 
 from flask import Flask, render_template, request, redirect, session, url_for, flash 
 from flask_mail import Mail, Message
@@ -22,8 +21,7 @@ from users import (
     update_user_password,
     store_otp,
     verify_otp,
-    set_user_verified,
-    is_user_verified
+    set_user_verified
 )
 
 # FLASK APP CONFIG
@@ -43,7 +41,10 @@ app.config['MAIL_DEFAULT_SENDER'] = 'furkaanmanzoor333@gmail.com'
 
 mail = Mail(app)
 
-app.secret_key = "early_sepsis_major_project_secret"
+app.secret_key = os.getenv(
+    "SECRET_KEY",
+    "early_sepsis_major_project_secret"
+)
 
 # Initialize database
 init_db()
@@ -76,8 +77,83 @@ MODEL_CONFIG = {
     }
 }
 
-    
+# NUMERIC FEATURE VALIDATION RULES
+VALIDATION_RULES = {
 
+    "pneumonia": {
+        "Age": (0, 120),
+        "oxygen_saturation": (50, 100),
+        "wbc_count": (1000, 30000),
+        "body_temperature": (30, 45),
+        "heart_rate": (30, 220),
+        "respiratory_rate": (5, 60),
+        "systolic_bp": (50, 250),
+        "platelets": (1000, 1000000)
+    },
+
+    "uti": {
+        "temperature": (30, 45),
+        "heart_rate": (30, 220),
+        "respiratory_rate": (5, 60),
+        "systolic_bp": (50, 250),
+        "platelets": (1000, 1000000),
+        "wbc": (1000, 30000)
+    },
+
+    "abdominal": {
+        "age": (0, 120),
+        "bmi": (10, 80),
+        "body_temperature": (30, 45),
+        "wbc_count": (0, 50),
+        "crp": (0, 500),
+        "heart_rate": (30, 220),
+        "respiratory_rate": (5, 60),
+        "systolic_bp": (50, 250),
+        "platelets": (1000, 1000000)
+    },
+
+    "ssti": {
+        "age": (0, 120),
+        "heart_rate": (30, 220),
+        "respiratory_rate": (5, 60),
+        "systolic_bp": (50, 250),
+        "platelets": (1000, 1000000)
+    }
+}
+# BACKEND VALIDATION
+def validate_patient_data(disease, patient_data):
+
+    disease = disease.lower()
+
+    if disease not in VALIDATION_RULES:
+        return None
+
+    rules = VALIDATION_RULES[disease]
+
+    for feature, (min_val, max_val) in rules.items():
+
+        if feature not in patient_data:
+            continue
+
+        try:
+            value = float(patient_data[feature])
+
+        except (ValueError, TypeError):
+
+            return (
+                f"{feature.replace('_', ' ').title()} "
+                f"must be a valid numeric value."
+            )
+
+        if value < min_val or value > max_val:
+
+            return (
+                f"{feature.replace('_', ' ').title()} "
+                f"must be between "
+                f"{min_val} and {max_val}."
+            )
+
+    return None
 
 # LOAD ALL MODELS AT STARTUP
 LOADED_MODELS = {}
@@ -340,18 +416,45 @@ def predict():
     result = None
 
     if request.method == "POST":
+
         disease = request.form["disease"]
 
-        # Collect inputs exactly as sent by JS
+        if disease not in MODEL_CONFIG:
+            flash("Invalid disease selected.")
+            return render_template(
+                "predict.html",
+                result=None
+    )
+
         patient_data = {
-            k:v
+            k: v
             for k, v in request.form.items()
             if k != "disease"
         }
 
-        result = predict_sepsis_risk(disease, patient_data)
+        validation_error = validate_patient_data(
+            disease,
+            patient_data
+        )
 
-        user = get_user_by_username(session["user"])
+        if validation_error:
+
+            flash(validation_error)
+
+            return render_template(
+                "predict.html",
+                result=None
+            )
+
+        result = predict_sepsis_risk(
+            disease,
+            patient_data
+        )
+
+        user = get_user_by_username(
+            session["user"]
+        )
+
         save_prediction(
             user["id"],
             result["Disease"],

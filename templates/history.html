@@ -67,19 +67,19 @@
   }
 
   .risk-low {
-    color: #4ade80;
-    font-weight: 600;
-  }
+    color: #22c55e;   /* Green */
+    font-weight: 700;
+}
 
-  .risk-medium {
-    color: #facc15;
-    font-weight: 600;
-  }
+.risk-medium {
+    color: #facc15;   /* Yellow */
+    font-weight: 700;
+}
 
-  .risk-high {
-    color: #f87171;
-    font-weight: 600;
-  }
+.risk-high {
+    color: #ef4444;   /* Red */
+    font-weight: 700;
+}
 
   .no-history {
     text-align: center;
@@ -123,56 +123,146 @@
       padding: 14px;
     }
   }
+
+@media print {
+    body {
+        background: white !important;
+        color: black !important;
+    }
+
+    button {
+        display: none;
+    }
+
+    h1 {
+        text-align: center;
+        color: black;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+    th, td {
+        border: 1px solid black;
+        padding: 8px;
+        color: black;
+    }
+} 
+
+.btn {
+    padding: 10px 15px;
+    margin-right: 10px;
+    background: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background: #45a049;
+}
+
 </style>
 
 <div class="page-wrapper">
   <div class="main-content">
 
     <section class="hero">
-      <h1>Prediction History</h1>
-      <p>Review your previous disease-specific sepsis risk assessments</p>
-    </section>
+  <h1>Prediction History</h1>
+  <p>Review your previous disease-specific sepsis risk assessments</p>
+</section>
 
-    <div class="history-card">
-      {% if predictions %}
-      <div style="overflow-x: auto;">
-        <table>
-          <thead>
-            <tr>
-              <th>Date</th>
-              <th>Disease</th>
-              <th>Sepsis Prediction</th>
-              <th>Probability</th>
-              <th>Risk Level</th>
-            </tr>
-          </thead>
-          <tbody>
-            {% for item in predictions %}
-            <tr>
-              <td>{{ item.timestamp }}</td>
-              <td>{{ item.disease }}</td>
-              <td>{{ item.sepsis_prediction }}</td>
-              <td>{{ item.probability }}</td>
-              <td class="
-                {% if item.risk_level == 'Low Risk' %}risk-low
-                {% elif item.risk_level == 'Moderate Risk' %}risk-medium
-                {% else %}risk-high{% endif %}
-              ">
-                {{ item.risk_level }}
-              </td>
-            </tr>
-            {% endfor %}
-          </tbody>
-        </table>
-      </div>
-      {% else %}
-      <div class="no-history">
-        <p>No sepsis predictions found yet.</p>
-        <a href="{{ url_for('predict') }}" class="btn">Run First Prediction</a>
-      </div>
-      {% endif %}
-    </div>
+<div class="history-card">
 
+  {% if predictions %}
+
+  <!-- ✅ Buttons -->
+  <div style="margin-bottom: 15px;">
+      <button onclick="downloadCSV()" class="btn">Download CSV</button>
+      <button onclick="printHistory()" class="btn">Print / Save as PDF</button>
   </div>
+
+  <div style="overflow-x: auto;">
+    <table>
+      <thead>
+        <tr>
+          <th>Date</th>
+          <th>Disease</th>
+          <th>Sepsis Prediction</th>
+          <th>Probability</th>
+          <th>Risk Level</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        {% for item in predictions %}
+        <tr>
+          <td>{{ item.timestamp }}</td>
+          <td>{{ item.disease }}</td>
+          <td>{{ item.sepsis_prediction }}</td>
+          <td>{{ item.probability }}</td>
+          <td class="
+              {% if item.risk_level == 'Low' %}
+                  risk-low
+              {% elif item.risk_level == 'Medium' %}
+                  risk-medium
+              {% elif item.risk_level == 'High' %}
+                  risk-high
+              {% endif %}
+            ">
+              {{ item.risk_level }}
+          </td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+
+  {% else %}
+  <div class="no-history">
+    <p>No sepsis predictions found yet.</p>
+    <a href="{{ url_for('predict') }}" class="btn">Run First Prediction</a>
+  </div>
+  {% endif %}
+
 </div>
+
+<script>
+function downloadCSV() {
+    let table = document.querySelector(".history-card table");
+    let rows = table.querySelectorAll("tr");
+
+    let csv = [];
+
+    rows.forEach(row => {
+        let cols = row.querySelectorAll("td, th");
+        let rowData = [];
+
+        cols.forEach(col => {
+            rowData.push('"' + col.innerText + '"');
+        });
+
+        csv.push(rowData.join(","));
+    });
+
+    let csvString = csv.join("\n");
+
+    let blob = new Blob([csvString], { type: "text/csv" });
+    let url = window.URL.createObjectURL(blob);
+
+    let a = document.createElement("a");
+    a.href = url;
+    a.download = "prediction_history.csv";
+    a.click();
+}
+
+function printHistory() {
+    window.print();
+}
+</script>
+
+
 {% endblock %}
